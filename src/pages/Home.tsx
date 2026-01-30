@@ -43,7 +43,7 @@ export default function App() {
     <>
       <Header />
 
-      <Box sx={{ mt: 2 }}>
+      {/* <Box sx={{ mt: 2 }}>
         <Container maxWidth="lg">
           <CategoryCarousel categories={categories} />
           <RestaurantCarousel
@@ -51,7 +51,7 @@ export default function App() {
             data={restaurants}
           />
         </Container>
-      </Box>
+      </Box> */}
     </>
   );
 }
