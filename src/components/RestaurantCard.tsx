@@ -16,7 +16,7 @@ type Props = {
 
 export default function RestaurantCard({ restaurant }: Props) {
   return (
-    <Card sx={{ minWidth: 260 }}>
+    <Card sx={{ minWidth: 265, backgroundColor: "f7f7f7" }}>
       <Box position="relative">
         <CardMedia component="img" height="160" image={restaurant.image} />
         <Typography
@@ -24,7 +24,7 @@ export default function RestaurantCard({ restaurant }: Props) {
             position: "absolute",
             bottom: 8,
             left: 8,
-            color: "#fff",
+            color: "#f7f7f7",
             fontWeight: 700,
           }}
         >

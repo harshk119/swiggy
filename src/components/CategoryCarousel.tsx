@@ -1,39 +1,70 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
+import Divider from "@mui/material/Divider";
+
+import { useRef } from "react";
+import CarouselArrows from "./CarouselArrows";
 
 type Category = {
+  id: number;
   title: string;
   image: string;
 };
 
-type CategoryCarouselProps = {
+type Props = {
   categories: Category[];
 };
 
-export default function CategoryCarousel({
-  categories,
-}: CategoryCarouselProps) {
-  return (
-    <Box mt={4}>
-      <Typography variant="h6" mb={2}>
-        What's on your mind?
-      </Typography>
+export default function CategoryCarousel({ categories }: Props) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const isDesktop = useMediaQuery("(min-width:900px)");
 
-      <Box display="flex" gap={4} overflow="auto">
-        {categories.map((item) => (
-          <Box key={item.title} textAlign="center" minWidth={100}>
+  return (
+    <Box sx={{ backgroundColor: "#f7f7f7" }}>
+      <Box maxWidth="lg" mx="auto" px={2} py={2}>
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+          mb={3}
+        >
+          <Typography fontSize={25} fontWeight={700}>
+            What's on your mind?
+          </Typography>
+          {isDesktop && <CarouselArrows scrollRef={scrollRef} />}
+        </Box>
+
+        <Box
+          ref={scrollRef}
+          display="flex"
+          gap={5}
+          overflow="auto"
+          sx={{
+            scrollbarWidth: "none",
+            "&::-webkit-scrollbar": { display: "none" },
+          }}
+        >
+          {categories.map((item) => (
             <Box
-              component="img"
-              src={item.image}
-              sx={{
-                width: 90,
-                height: 90,
-                borderRadius: "50%",
-                objectFit: "cover",
-              }}
-            />
-            <Typography mt={1}>{item.title}</Typography>
-          </Box>
-        ))}
+              key={item.id}
+              minWidth={120}
+              textAlign="center"
+              sx={{ cursor: "pointer" }}
+            >
+              {/* IMAGE */}
+              <Box
+                component="img"
+                src={item.image}
+                alt={item.title}
+                sx={{
+                  width: 200,
+                  height: 180,
+                  objectFit: "contain",
+                }}
+              />
+            </Box>
+          ))}
+        </Box>
+        <Divider sx={{ borderBottomWidth: 2, mt: 4 }} />
       </Box>
     </Box>
   );
