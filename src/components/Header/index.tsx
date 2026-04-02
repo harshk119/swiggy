@@ -10,6 +10,7 @@ import {
   ListItemIcon,
   ListItemText,
   Divider,
+  Button,
   ListItemButton,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -19,10 +20,19 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import { useState } from "react";
-import swiggyLogo from "../images/swiggy.png";
+import swiggyLogo from "../../images/swiggy.png";
+import type { MenuItem } from "./type";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+
+  const menuItems: MenuItem[] = [
+    { icon: <SearchIcon />, text: "Search" },
+    { icon: <LocalOfferIcon />, text: "Offers" },
+    { icon: <HelpOutlineIcon />, text: "Help" },
+    { icon: <PersonOutlineIcon />, text: "Sign In" },
+    { icon: <ShoppingCartIcon />, text: "Cart" },
+  ];
 
   return (
     <>
@@ -42,7 +52,6 @@ export default function Header() {
               sx={{ display: { xs: "flex", md: "none" } }}
               onClick={() => setOpen(true)}
             >
-              {/* Menu Icon For Mobile Appaers for xs */}
               <MenuIcon />
             </IconButton>
 
@@ -62,18 +71,24 @@ export default function Header() {
             </IconButton>
           </Box>
 
-          {/* Desktop */}
           <Box display={{ xs: "none", md: "flex" }} alignItems="center" gap={6}>
-            <HeaderItem icon={<SearchIcon />} text="Search" />
-            <HeaderItem icon={<LocalOfferIcon />} text="Offers" />
-            <HeaderItem icon={<HelpOutlineIcon />} text="Help" />
-            <HeaderItem icon={<PersonOutlineIcon />} text="Sign In" />
-            <HeaderItem icon={<ShoppingCartIcon />} text="Cart" />
+            {menuItems.map((item, index) => (
+              <Button
+                key={index}
+                startIcon={item.icon}
+                sx={{
+                  color: "#000",
+                  textTransform: "none",
+                  fontWeight: 500,
+                }}
+              >
+                {item.text}
+              </Button>
+            ))}
           </Box>
         </Toolbar>
       </AppBar>
 
-      {/* Mobile Drawer */}
       <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
         <Box width={260} role="presentation">
           <Box px={2} py={2}>
@@ -83,34 +98,17 @@ export default function Header() {
           <Divider />
 
           <List>
-            <DrawerItem icon={<SearchIcon />} text="Search" />
-            <DrawerItem icon={<LocalOfferIcon />} text="Offers" />
-            <DrawerItem icon={<HelpOutlineIcon />} text="Help" />
-            <DrawerItem icon={<PersonOutlineIcon />} text="Sign In" />
-            <DrawerItem icon={<ShoppingCartIcon />} text="Cart" />
+            {menuItems.map((item, index) => (
+              <ListItem key={index} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>{item.icon}</ListItemIcon>
+                  <ListItemText primary={item.text} />
+                </ListItemButton>
+              </ListItem>
+            ))}
           </List>
         </Box>
       </Drawer>
     </>
-  );
-}
-
-function HeaderItem({ icon, text }: { icon: React.ReactNode; text: string }) {
-  return (
-    <Box display="flex" alignItems="center" gap={0.5}>
-      {icon}
-      <Typography>{text}</Typography>
-    </Box>
-  );
-}
-
-function DrawerItem({ icon, text }: { icon: React.ReactNode; text: string }) {
-  return (
-    <ListItem disablePadding>
-      <ListItemButton>
-        <ListItemIcon>{icon}</ListItemIcon>
-        <ListItemText primary={text} />
-      </ListItemButton>
-    </ListItem>
   );
 }

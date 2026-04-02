@@ -17,7 +17,12 @@ type Props = {
 export default function RestaurantGridSection({ data }: Props) {
   return (
     <Box sx={{ backgroundColor: "#f7f7f7" }}>
-      <Box maxWidth="lg" mx="auto" px={2} py={5}>
+      <Box
+        sx={{ paddingLeft: { xs: 1, md: 15 }, paddingRight: { xs: 1, md: 15 } }}
+        mx="auto"
+        px={2}
+        py={5}
+      >
         <Box mb={1}>
           <Typography fontSize={24} fontWeight={700}>
             Restaurants with online food delivery in Ahmedabad
@@ -33,7 +38,7 @@ export default function RestaurantGridSection({ data }: Props) {
           </Button>
         </Box>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={6}>
           {data.map((res: any) => (
             <Grid key={res.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
               <RestaurantCard restaurant={res} />

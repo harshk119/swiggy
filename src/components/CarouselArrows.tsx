@@ -19,6 +19,13 @@ export default function CarouselArrows({
       behavior: "smooth",
     });
   };
+  const arrowStyle = {
+    backgroundColor: "#e9e9eb",
+    ml: 1,
+    "&:hover": {
+      backgroundColor: "#d4d5d9",
+    },
+  };
 
   return (
     <Box>
@@ -32,11 +39,3 @@ export default function CarouselArrows({
     </Box>
   );
 }
-
-const arrowStyle = {
-  backgroundColor: "#e9e9eb",
-  ml: 1,
-  "&:hover": {
-    backgroundColor: "#d4d5d9",
-  },
-};

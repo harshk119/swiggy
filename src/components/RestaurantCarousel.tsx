@@ -22,7 +22,12 @@ export default function RestaurantCarousel({ title, data }: Props) {
   const isDesktop = useMediaQuery("(min-width:900px)");
   return (
     <Box sx={{ backgroundColor: "#f7f7f7" }}>
-      <Box maxWidth="lg" mx="auto" px={2} py={4}>
+      <Box
+        sx={{ paddingLeft: { xs: 1, md: 15 }, paddingRight: { xs: 1, md: 15 } }}
+        mx="auto"
+        px={2}
+        py={4}
+      >
         <Box
           display="flex"
           alignItems="center"

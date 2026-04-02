@@ -7,7 +7,6 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 export default function Footer() {
   return (
-    
     <Box sx={{ backgroundColor: "#f7f7f7" }}>
       {/* DOWNLOAD APP STRIP */}
       <Box
@@ -16,7 +15,7 @@ export default function Footer() {
         px={2}
         py={3}
         display="flex"
-        justifyContent="space-between"
+        justifyContent="center"
         alignItems="center"
         flexWrap="wrap"
         gap={2}
@@ -40,8 +39,13 @@ export default function Footer() {
       </Box>
 
       {/* MAIN FOOTER */}
-      <Box maxWidth="lg" mx="auto" px={2} py={6}>
-        <Grid container spacing={6}>
+      <Box
+        sx={{ paddingLeft: { xs: 1, md: 15 }, paddingRight: { xs: 1, md: 15 } }}
+        mx="auto"
+        px={2}
+        py={6}
+      >
+        <Grid container spacing={4}>
           {/* LOGO SECTION */}
           <Grid size={{ xs: 12, md: 3 }}>
             <Typography fontSize={28} fontWeight={700} color="#fc8019">
@@ -128,7 +132,7 @@ export default function Footer() {
   );
 }
 
-/* ---------- Small Reusable Footer Pieces ---------- */
+
 
 function FooterTitle({ text }: { text: string }) {
   return (
