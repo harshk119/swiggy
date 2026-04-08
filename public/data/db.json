@@ -1,0 +1,112 @@
+{
+  "categories": [
+    { "id": 1, "title": "Pizzas", "image": "/images/Pizzas.png" },
+    { "id": 2, "title": "Burgers", "image": "/images/Burgers.png" },
+    { "id": 3, "title": "Cakes", "image": "/images/Cakes.png" },
+    { "id": 4, "title": "Vada Pav", "image": "/images/VadaPav.png" },
+    { "id": 5, "title": "Rolls", "image": "/images/Rolls.png" },
+    { "id": 6, "title": "Biryani", "image": "/images/Biryani.png" },
+    { "id": 7, "title": "Samosa", "image": "/images/Samosa.png" },
+    { "id": 8, "title": "Tea", "image": "/images/Tea.png" },
+    { "id": 9, "title": "Momos", "image": "/images/Momos.png" },
+    { "id": 10, "title": "Shake", "image": "/images/Shake.png" }
+  ],
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "La Pino'z Pizza",
+      "image": "/images/Lapinoz.png",
+      "offer": "50% OFF UPTO ₹100",
+      "rating": 4.2,
+      "time": "30-35 mins"
+    },
+    {
+      "id": 2,
+      "name": "McDonald's",
+      "image": "/images/MacD.png",
+      "offer": "₹125 OFF",
+      "rating": 4.5,
+      "time": "20-25 mins"
+    },
+    {
+      "id": 3,
+      "name": "KFC",
+      "image": "/images/KFC.png",
+      "offer": "40% OFF",
+      "rating": 4.3,
+      "time": "25-30 mins"
+    },
+    {
+      "id": 4,
+      "name": "Subway",
+      "image": "/images/Subway.png",
+      "offer": "30% OFF",
+      "rating": 4.3,
+      "time": "25-30 mins"
+    },
+    {
+      "id": 5,
+      "name": "Subway",
+      "image": "/images/Subway.png",
+      "offer": "40% OFF",
+      "rating": 4.3,
+      "time": "25-30 mins"
+    },
+    {
+      "id": 6,
+      "name": "Subway",
+      "image": "/images/Subway.png",
+      "offer": "40% OFF",
+      "rating": 4.3,
+      "time": "25-30 mins"
+    },
+    {
+      "id": 7,
+      "name": "Subway",
+      "image": "/images/Subway.png",
+      "offer": "40% OFF",
+      "rating": 4.3,
+      "time": "25-30 mins"
+    },
+    {
+      "id": 8,
+      "name": "Subway",
+      "image": "/images/Subway.png",
+      "offer": "40% OFF",
+      "rating": 4.3,
+      "time": "25-30 mins"
+    },
+    {
+      "id": 9,
+      "name": "Subway",
+      "image": "/images/Subway.png",
+      "offer": "40% OFF",
+      "rating": 4.3,
+      "time": "25-30 mins"
+    },
+    {
+      "id": 10,
+      "name": "Subway",
+      "image": "/images/Subway.png",
+      "offer": "40% OFF",
+      "rating": 4.3,
+      "time": "25-30 mins"
+    },
+    {
+      "id": 11,
+      "name": "Subway",
+      "image": "/images/Subway.png",
+      "offer": "40% OFF",
+      "rating": 4.3,
+      "time": "25-30 mins"
+    },
+    {
+      "id": 12,
+      "name": "Subway",
+      "image": "/images/Subway.png",
+      "offer": "40% OFF",
+      "rating": 4.3,
+      "time": "25-30 mins"
+    }
+  ]
+}

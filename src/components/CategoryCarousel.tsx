@@ -43,9 +43,12 @@ export default function CategoryCarousel({ categories }: Props) {
           display="flex"
           gap={2}
           overflow="auto"
-          sx={{
-            scrollbarWidth: "none",
-            "&::-webkit-scrollbar": { display: "none" },
+          sx={{ 
+            pb: 2,
+            "&::-webkit-scrollbar": { height: "6px" },
+            "&::-webkit-scrollbar-track": { background: "transparent" },
+            "&::-webkit-scrollbar-thumb": { background: "transparent", borderRadius: "10px" },
+            "&:hover::-webkit-scrollbar-thumb": { background: "#ccc" }
           }}
         >
           {categories.map((item) => (

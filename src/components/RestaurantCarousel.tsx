@@ -45,8 +45,11 @@ export default function RestaurantCarousel({ title, data }: Props) {
           gap={5}
           overflow="auto"
           sx={{
-            scrollbarWidth: "none",
-            "&::-webkit-scrollbar": { display: "none" },
+            pb: 2,
+            "&::-webkit-scrollbar": { height: "6px" },
+            "&::-webkit-scrollbar-track": { background: "transparent" },
+            "&::-webkit-scrollbar-thumb": { background: "transparent", borderRadius: "10px" },
+            "&:hover::-webkit-scrollbar-thumb": { background: "#ccc" }
           }}
         >
           {data.map((res) => (
