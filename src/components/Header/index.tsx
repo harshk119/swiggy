@@ -12,6 +12,7 @@ import HeaderLogo from "./HeaderLogo";
 import MobileActionButtons from "./MobileActionButtons";
 import DesktopNav from "./DesktopNav";
 import MobileDrawer from "./MobileDrawer";
+import SignInDrawer from "../SignIn";
 
 // 1. Move static data outside so it's not recreated on every render
 export const defaultMenuItems: MenuItem[] = [
@@ -29,6 +30,7 @@ export default function Header({
   menuItems?: MenuItem[];
 } = {}) {
   const [open, setOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
 
   return (
     <>
@@ -57,7 +59,7 @@ export default function Header({
           <MobileActionButtons />
 
           {/* Desktop Navigation */}
-          <DesktopNav items={menuItems} />
+          <DesktopNav items={menuItems} onSignInClick={() => setLoginOpen(true)} />
         </Toolbar>
       </AppBar>
 
@@ -66,7 +68,11 @@ export default function Header({
         items={menuItems}
         open={open}
         onClose={() => setOpen(false)}
+        onSignInClick={() => setLoginOpen(true)}
       />
+
+      {/* Slide-in Login / Sign Up Drawer */}
+      <SignInDrawer open={loginOpen} onClose={() => setLoginOpen(false)} />
     </>
   );
 }
